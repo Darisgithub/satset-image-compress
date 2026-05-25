@@ -88,7 +88,7 @@ pip install numpy matplotlib pillow streamlit
 ## Run Project
 
 ```bash
-streamlit run app.py
+streamlit run src/app.py
 ```
 
 ---
@@ -98,12 +98,13 @@ streamlit run app.py
 ```text
 svd-image-compression/
 │
-├── app.py
-├── requirements.txt
-├── README.md
+├── src/
+│   ├── app.py              # Streamlit UI
+│   └── compression.py      # SVD compression logic
+│
 ├── images/
-├── modules/
-└── results/
+├── requirements.txt
+└── README.md
 ```
 
 ---
