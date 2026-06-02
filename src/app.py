@@ -40,7 +40,6 @@ compress_image = compression.compress_image
 # =========================================================
 st.set_page_config(
     page_title="SVD Image Compression",
-    page_icon="🖼️",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -248,6 +247,52 @@ img {
     margin-top: 1rem;
 }
 
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    * {
+        color: #ffffff !important;
+    }
+    html, body {
+        color: #ffffff !important;
+    }
+    [class*="css"] {
+        color: #ffffff !important;
+    }
+    [data-testid="stMarkdownContainer"] {
+        color: #ffffff !important;
+    }
+    [data-testid="stMarkdownContainer"] * {
+        color: #ffffff !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, span, div, label {
+        color: #ffffff !important;
+    }
+    .stMarkdown, .stMarkdown * {
+        color: #ffffff !important;
+    }
+    .stSelectbox label, .stSlider label, .stRadio label, .stSubheader {
+        color: #ffffff !important;
+    }
+    .stMetric, .stMetricValue, .stMetricLabel {
+        color: #ffffff !important;
+    }
+    input, select, textarea {
+        color: #ffffff !important;
+    }
+    .main-title {
+        color: #7dd3fc !important;
+    }
+    .subtitle {
+        color: #cbd5e1 !important;
+    }
+    .stat-key {
+        color: #cbd5e1 !important;
+    }
+    .stat-value {
+        color: #ffffff !important;
+    }
+}
+
 @media (max-width: 900px) {
     .card-header {
         flex-direction: column;
@@ -370,13 +415,6 @@ if uploaded_file:
         value=default_k
     )
 
-    preview_mode = st.radio(
-        "Preview Mode",
-        ["Side-by-side", "Slider Comparison"],
-        index=1,
-        horizontal=True
-    )
-
     filter_mode = st.selectbox(
         "Compression Filter Style",
         ["Standard", "Retro", "Pro"],
@@ -438,28 +476,14 @@ if uploaded_file:
     # =====================================================
     if compressed_image is not None:
 
-        if image_comparison is not None and preview_mode == "Slider Comparison":
+        if image_comparison is not None:
             image_comparison(
                 img1=image,
                 img2=compressed_image,
                 label1="Original",
                 label2="Compressed"
             )
-        else:
-            col_a, col_b = st.columns(2)
-            with col_a:
-                st.markdown("#### Original")
-                st.markdown('<div class="image-box">', unsafe_allow_html=True)
-                st.image(image, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
-            with col_b:
-                st.markdown("#### Compressed")
-                st.markdown('<div class="image-box">', unsafe_allow_html=True)
-                st.image(compressed_image, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
-
-        st.markdown("---")
-
+            st.markdown("---")
 
         # =================================================
         # DISPLAY SECTION
