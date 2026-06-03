@@ -7,7 +7,7 @@ def render_header():
     <div class="brutal-card" style="background: var(--accent-pink); color: white; text-align: center; border-color: black;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 0.8rem;">
             <div class="pixel-text" style="font-size: 1.8rem; line-height: 1.4; color: white; text-shadow: 4px 4px 0px black;">
-                SATSET IMAGE COMPRESS
+                ▀▄▀▄▀▄ SATSET IMAGE COMPRESS ▀▄▀▄▀▄
             </div>
         </div>
         <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 2rem; color: black; background: var(--accent-yellow); padding: 0.5rem; display: inline-block; border: 2px solid black;">
